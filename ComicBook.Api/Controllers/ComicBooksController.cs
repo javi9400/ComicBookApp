@@ -18,6 +18,8 @@ namespace ComicBook.Api.Controllers
         {
             _comicBookRepository = comicBookRepository ?? throw new ArgumentNullException(nameof(comicBookRepository));
         }
+
+        [HttpGet]
         public ActionResult<IEnumerable<ComicBookDto>> GetComics()
         {
             var comicBooksFromDb = _comicBookRepository.GetAll();
