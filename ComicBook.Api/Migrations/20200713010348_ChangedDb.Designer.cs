@@ -3,15 +3,17 @@ using System;
 using ComicBook.Api.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace ComicBook.Api.Migrations
 {
     [DbContext(typeof(ComicBookContext))]
-    partial class ComicBookContextModelSnapshot : ModelSnapshot
+    [Migration("20200713010348_ChangedDb")]
+    partial class ChangedDb
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

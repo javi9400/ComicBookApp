@@ -11,6 +11,17 @@ namespace ComicBook.Api.Repositories
     {
         public ComicBookRepository(ComicBookContext comicBookContext) : base(comicBookContext)
         {
-        } 
+           
+        }
+
+        public override void Update(int id, Entities.ComicBook entityToUpdate)
+        {
+            var comicToUpdate = GetById(id);
+
+            comicToUpdate.Description = entityToUpdate.Description;
+            comicToUpdate.Title = entityToUpdate.Title;
+
+            base.Update(id, comicToUpdate);
+        }
     }
 }

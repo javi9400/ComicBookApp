@@ -2,20 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using ComicBook.Api.Commons;
-using ComicBook.Api.Context;
-using ComicBook.Api.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 
-namespace ComicBook.Api
+namespace ComicBook.Client
 {
     public class Startup
     {
@@ -29,17 +23,7 @@ namespace ComicBook.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddCors(options=>
-            {
-                options.AddPolicy("AllowOrigin",
-            builder => builder.WithOrigins("http://localhost:3000").WithOrigins("https://localhost:3000")
-            );
-            }
-            );
-            services.AddControllers();
-            services.AddScoped<IComicBookRepository, ComicBookRepository>();
-            services.AddDbContext<ComicBookContext>(options =>
-             options.UseNpgsql(Configuration.GetConnectionString("ComicBookDb")));
+            services.AddControllersWithViews();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -49,15 +33,24 @@ namespace ComicBook.Api
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            else
+            {
+                app.UseExceptionHandler("/Home/Error");
+                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+                app.UseHsts();
+            }
+            app.UseHttpsRedirection();
+            app.UseStaticFiles();
 
             app.UseRouting();
 
             app.UseAuthorization();
-            app.UseCors("AllowOrigin");
+
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers();
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }

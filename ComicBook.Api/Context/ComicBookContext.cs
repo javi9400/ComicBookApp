@@ -22,7 +22,6 @@ namespace ComicBook.Api.Context
                 Id=1,
                 Description="Test comic for pollo",
                 ReleaseDate=DateTime.Now,
-                DateOfCreation=DateTime.Now,
                 Issue=69,
                 Title="Venganza del toro vince part 1"
             });;

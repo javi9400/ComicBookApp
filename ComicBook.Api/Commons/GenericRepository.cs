@@ -21,6 +21,11 @@ namespace ComicBook.Api.Commons
             _comicBookContext.Remove(id);
         }
 
+        public bool Exists(int id)
+        {
+            return _comicBookContext.Set<TEntity>().Any(c => c.Id == id);
+        }
+
         public virtual IEnumerable<TEntity> GetAll()
         {
             return _comicBookContext.Set<TEntity>();

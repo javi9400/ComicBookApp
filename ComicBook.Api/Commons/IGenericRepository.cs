@@ -19,5 +19,8 @@ namespace ComicBook.Api.Commons
 
         void SaveChanges();
 
+        bool Exists(int id);
+
+
     }
 }

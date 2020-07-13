@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComicBook.Api", "ComicBook.Api\ComicBook.Api.csproj", "{F7581092-3DE4-448C-8FC2-EB863822565E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ComicBook.Api", "ComicBook.Api\ComicBook.Api.csproj", "{F7581092-3DE4-448C-8FC2-EB863822565E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComicBook.Client", "ComicBook.Client\ComicBook.Client.csproj", "{DFB4A469-88F6-425A-887A-BD0A17DF01F1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{F7581092-3DE4-448C-8FC2-EB863822565E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F7581092-3DE4-448C-8FC2-EB863822565E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F7581092-3DE4-448C-8FC2-EB863822565E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFB4A469-88F6-425A-887A-BD0A17DF01F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFB4A469-88F6-425A-887A-BD0A17DF01F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFB4A469-88F6-425A-887A-BD0A17DF01F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFB4A469-88F6-425A-887A-BD0A17DF01F1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

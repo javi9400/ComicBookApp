@@ -1,0 +1,23 @@
+
+{
+    "region" : "us-east-2",
+    "configuration" : "Release",
+    "framework"     : "netcoreapp3.1",
+    "self-contained" : false,
+    "application"    : "comicbook-dev",
+    "environment"    : "ComicbookDev-env",
+    "enable-xray"    : false,
+    "enhanced-health-type" : "basic",
+    "additional-options"   : "",
+    "proxy-server"         : "nginx",
+    "solution-stack"       : "64bit Windows Server 2019 v2.5.7 running IIS 10.0",
+    "environment-type"     : "SingleInstance",
+    "cname"                : "comicbookapi-dev",
+    "instance-type"        : "t3a.medium",
+    "key-pair"             : "",
+    "instance-profile"     : "aws-elasticbeanstalk-ec2-role",
+    "service-role"         : "aws-elasticbeanstalk-service-role",
+    "profile"              : "default",
+    "iis-website"          : "Default Web Site",
+    "app-path"             : "/"
+}
